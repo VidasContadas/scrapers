@@ -38,12 +38,14 @@ class FosasAndaluciaSpider(CrawlSpider):
             fosa['foto'] = foto[0].strip()
              
         descripcion = response.xpath("//div[@id='s_locades_capa']/div/text()").extract()
+        descripcion = [desc.strip() for desc in descripcion]
         fosa['descripcion'] = '"' + ' '.join(descripcion) + '"'
         
         fosa['victimas'] = response.xpath("//div[@class='s_victimas']/text()").extract()[1].strip()
 
         relato = response.xpath("//div[@class='s_locades'][2]/following-sibling::div[@class='wtext'][1]/p/text()").extract()
-        #fosa['relato_historico'] = '"' + ' '.join(relato) +'"'
+        relato = [desc.strip() for desc in relato]
+        fosa['relato_historico'] = '"' + ' '.join(relato) +'"'
         
         fecha_actuacion = response.xpath("//div[@class='s_fecha2'][1]/text()").extract()
         fosa['fecha_actuacion'] = fecha_actuacion[1].strip()
@@ -51,6 +53,7 @@ class FosasAndaluciaSpider(CrawlSpider):
         fosa['promotor_actuacion'] = response.xpath("//div[@class='s_promotor'][1]/text()").extract()[1].strip()
         
         descripcion_actuacion = response.xpath("//div[@class='s_locades'][3]/following-sibling::div[@class='wtext'][1]/p/text()").extract()
+        descripcion_actuacion = [desc.strip() for desc in descripcion_actuacion]
         fosa['descripcion_actuacion'] = '"' + ' '.join(descripcion_actuacion)+'"'
         
         return fosa
