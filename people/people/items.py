@@ -13,6 +13,8 @@ class FosaItem(scrapy.Item):
     comunidad = scrapy.Field()
     provincia = scrapy.Field()
     municipio = scrapy.Field()
+    latitud = scrapy.Field()  
+    longitud = scrapy.Field()      
     fecha = scrapy.Field()
     titularidad = scrapy.Field()
     foto = scrapy.Field()
