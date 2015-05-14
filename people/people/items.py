@@ -6,7 +6,16 @@ class PeopleItem(scrapy.Item):
     name = scrapy.Field()
 
 
+class VictimaItem(scrapy.Item):
+    fosa = scrapy.Field()
+    nombre = scrapy.Field()
+    apellido = scrapy.Field()
+    ciudad = scrapy.Field()
+    sexo = scrapy.Field()        
+    fecha_muerte = scrapy.Field()
+
 class FosaItem(scrapy.Item):
+    nombre = scrapy.Field()
     url = scrapy.Field()
     codigo = scrapy.Field()
     tipo = scrapy.Field()
