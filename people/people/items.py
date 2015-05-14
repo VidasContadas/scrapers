@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
 import scrapy
 
-
 class PeopleItem(scrapy.Item):
     name = scrapy.Field()
-
 
 class VictimaItem(scrapy.Item):
     fosa = scrapy.Field()
