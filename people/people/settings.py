@@ -22,6 +22,6 @@ ITEM_PIPELINES = [
     'scrapy_mongodb.MongoDBPipeline']
 
 MONGODB_URI = 'mongodb://localhost:27017'
-MONGODB_DATABASE = 'scrapy'
+MONGODB_DATABASE = 'vidascontadas'
 MONGODB_COLLECTION = 'my_items'
 MONGODB_SPIDER_NAME = True
